@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Regalo para Cecilia <3</title>
+  <!-- Agrega la hoja de estilo de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .regalo {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body style="background: rgb(238,174,202);
+background: radial-gradient(circle, rgb(195, 96, 192) 0%, rgba(148,187,233,1) 100%);">
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 text-center">
+      <p><h3 style="color:rgb(123, 43, 30)" > <b>Abre el regalo no es virus jajajaj</b></h3></p>
+         <!-- Div para el regalo -->
+        <div class="regalo" onclick="playAudio()">
+            <!-- Imagen del regalo cerrado -->
+            <img src="regalocerrado.png" alt="Regalo cerrado" class="img-fluid" width="200" id="regalo">
+             <!-- Imagen del regalo abierto -->
+             <img src="regaloabierto.png" alt="Regalo cerrado" class="img-fluid" width="200" id="regaloAb" style="display: none;">
+             
+        </div>
+        <!-- Elemento de audio oculto -->
+        <audio id="audio" controls style="display: none">
+            <source src="FELIZ CUMPLEAÑOS - Versión Gatuna.mp3" type="audio/mp3">
+        </audio>
+        <!-- Div para el contenido del regalo -->
+        <div class="card mt-3 mb-3" id="contenido" style="display: none;">
+            <div class="card-body">
+                <h5 class="card-title">¡Feliz cumpleaños Cecilia!</h5>
+                <p class="card-text">Cecilia hoy es un dia muy especial porque es  tu cumpleaños te <br>
+                  deseo lo mejor , se que este año vas a cumplir todas tus metas.</p>
+                  <p> Me alegra mucho haberte conocido eres una persona con muchos valores ,
+                  virtudes,habilidades eh pasado tantas cosas contigo mi amiga de vinitos jaja  
+                que siempre me saca una sonrisa ,tambien somos psicologas de ambas en fin todos son iguales.
+               </p> No puedo creer que ya tengas <b>20 añitooos</b> ya estamos viejas , para mi
+              aun tienes 16 me quedo corta de palabras solo decirte gracias por todo y que tengamos
+               nuevos recuerdos. </p>
+                <img src="gatooo.png" class="img-fluid" width="200">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<center>
+  <div class="gato">
+<img  src="flork.png" alt="2" width="150" >
+</div>
+</center>
+
+<!-- Agrega los scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Agrega tu propio script JS -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.1/dist/confetti.browser.min.js"></script>
+<script>
+    function onClick() {
+        confetti({
+            particleCount: 150,
+            spread: 60
+        });
+    };
+</script>
+<script>
+    function playAudio() {
+        // Obtén el elemento de audio
+        var audio = document.getElementById("audio");
+        // Reproduce el audio
+        audio.play();
+        $("#contenido").toggle();
+        onClick();
+        $("#regalo").toggle();
+        $("#regaloAb").toggle();
+    }
+  </script>
+</body>
+</html>
